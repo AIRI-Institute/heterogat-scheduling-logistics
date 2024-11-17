@@ -13,13 +13,17 @@ pip install -r requirements.txt
 
 To run experiments on the baselines and the GNN model, run the following command:
 
-```python main.py```
+```
+python main.py
+```
 
 The results will be stored in the `results.log` file.
 
 To train the GNN models from scratch, run the following command:
 
-```python train.py```
+```
+python train.py
+```
 
 The results will be stored in the `training_gnn` folder.
 
