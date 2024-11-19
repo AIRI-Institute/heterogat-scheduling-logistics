@@ -29,7 +29,7 @@ The results will be stored in the `training_gnn` folder.
 
 ## Experimental results
 
-The total cost (the lower the better) of solutions to the problems in the [LMSC dataset](https://peerj.com/articles/cs-461/).
+The total cost (the lower the better) of solutions to the problems in the [LMSC dataset](https://figshare.com/articles/dataset/DataSet_for_logistics_and_manufacturing_service_composition/14229299?file=26849792).
 
 | Tasks-Operations-<br>Enterprises | No. | Optimal<br>solution | Random<br>solution | Greedy<br>algorithm | Genetic<br>algorithm | GNN (Ours) |
 |----------------------------------|-----|---------------------|--------------------|---------------------|----------------------|------------|
