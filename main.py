@@ -29,7 +29,8 @@ if __name__ == '__main__':
                     n_operations=n_operations,
                     out_dim=out_dim, 
                     n_layers=n_layers, 
-                    n_iterations=30,
+                    n_iterations=50,
+                    random_seed=0,
                 )
             delta = delta_from_gamma(problem, gamma)
             cost = total_cost_from_gamma(problem, gamma, delta)

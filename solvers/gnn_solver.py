@@ -1,8 +1,11 @@
 from solvers.graph_model import AttentionGNN, os_type, ss_type
 from utils import graph_from_problem, gamma_from_target, delta_from_gamma, total_cost_from_gamma
 import numpy as np
+import dgl
 
-def gnn_solve(problem, path_to_ckpt, n_operations, out_dim, n_layers, n_iterations=10):
+def gnn_solve(problem, path_to_ckpt, n_operations, out_dim, n_layers, n_iterations=10, random_seed=None):
+    if random_seed is not None:
+        dgl.seed(random_seed)
     graph = graph_from_problem(problem, max_operations=n_operations)
     graph.edata['feat'][os_type][:, 0] /= 10
     graph.edata['feat'][ss_type][:] /= 100
