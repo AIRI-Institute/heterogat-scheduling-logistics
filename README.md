@@ -2,6 +2,12 @@
 
 This repository is the official implementation of methods from the paper Graph Attention Networks for Scheduling in Cloud Manufacturing and Logistics.
 
+We investigate task scheduling in cloud manufacturing systems, emphasizing logistics integration. We propose a novel Graph Neural Network architecture for optimizing task scheduling by representing the problem on a heterogeneous graph, where nodes denote tasks and locations.
+
+<img src='overview.png' width=600>
+
+An example of the problem graph (left) and the solution graph (right). The lower subgraph represents 4 subtasks to be scheduled. Dotted edges between subgraphs in the problem graph show available enterprises to perform operations. Solid edges in the solution graph show assigned enterprises. The encoder generates feature embeddings, the dot product decoder predicts a probability of possible assignments.
+
 ## Requirements
 
 To install dependencies, run 
