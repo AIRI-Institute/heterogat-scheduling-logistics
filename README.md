@@ -1,12 +1,14 @@
 # Heterogeneous Graph Attention Networks for Scheduling in Cloud Manufacturing and Logistics
 
-This repository is the official implementation of methods from the paper Graph Attention Networks for Scheduling in Cloud Manufacturing and Logistics.
+This repository is the official implementation of methods from the paper [Graph Attention Networks for Scheduling in Cloud Manufacturing and Logistics](https://ieeexplore.ieee.org/document/10813358).
 
-We investigate task scheduling in cloud manufacturing systems, emphasizing logistics integration. We propose a novel Graph Neural Network architecture for optimizing task scheduling by representing the problem on a heterogeneous graph, where nodes denote tasks and locations.
+## Overview
+
+We investigate task scheduling in cloud manufacturing systems emphasizing logistics integration. We propose a graph neural network (GNN) architecture for optimizing task scheduling by representing the problem on a heterogeneous graph, where nodes denote tasks and locations.
 
 <img src='overview.png' width=600>
 
-An example of the problem graph (left) and the solution graph (right). The lower subgraph represents 4 subtasks to be scheduled. Dotted edges between subgraphs in the problem graph show available enterprises to perform operations. Solid edges in the solution graph show assigned enterprises. The encoder generates feature embeddings, the dot product decoder predicts a probability of possible assignments.
+An example of the problem graph (left) and the solution graph (right). The lower subgraph represents a task consisting of 4 subtasks to be scheduled. Dotted edges between subgraphs in the problem graph show available enterprises to perform operations. The encoders generate node embeddings, the dot product decoder predicts a probability of possible assignments. The solution is sampled from the predicted probabilities. Solid edges in the solution graph show an assigned enterprise for each subtask.
 
 ## Requirements
 
@@ -17,13 +19,13 @@ pip install -r requirements.txt
 
 ## Running experiments
 
-To run experiments on the baselines and the GNN model, run the following command:
+To run experiments on the baselines and the GNN models, run the following command:
 
 ```
 python main.py
 ```
 
-The results will be stored in the `results.log` file.
+The results will be stored in the [`results.log`](results.log) file.
 
 To train the GNN models from scratch, run the following command:
 
@@ -31,7 +33,7 @@ To train the GNN models from scratch, run the following command:
 python train.py
 ```
 
-The results will be stored in the `training_gnn` folder.
+Then replace the checkpoints in the folder [`checkpoints`](/checkpoints/) with the new ones stored in the folder `training_gnn` and run the experiments as described before.
 
 ## Experimental results
 
@@ -58,4 +60,20 @@ The total cost (the lower the better) of solutions to the problems in the [LMSC 
 |                                  | 2   | 13045.16            | 42312.09           | 17038.35            | 13580.50             | 14550.33   |
 |                                  | 3   | 14366.02            | 45445.61           | 18597.85            | 14899.99             | 16083.00   |
 
-Please note that results may differ slightly from the paper due to randomness.
+Please note that the results may differ slightly from the paper due to randomness.
+
+## Citation
+
+Please cite the paper as follows:
+
+```
+@article{fomin2024heterogeneous,
+  author={Fomin, Dmitrii and Makarov, Ilya and Voronina, Mariia and Strimovskaya, Anna and Pozdnyakov, Vitaliy},
+  journal={IEEE Access}, 
+  title={Heterogeneous Graph Attention Networks for Scheduling in Cloud Manufacturing and Logistics}, 
+  year={2024},
+  volume={12},
+  pages={196195-196206},
+  doi={10.1109/ACCESS.2024.3522020}
+}
+```
