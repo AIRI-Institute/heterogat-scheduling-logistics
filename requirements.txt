@@ -2,6 +2,8 @@ joblib
 pandas>=2.0.3
 numpy==1.26.4
 torch==2.2.1
+torchvision==0.17.1
+torchaudio==2.2.1
 torchdata<0.8.0
 dgl==2.1.0
 lightning>=2.3.2
